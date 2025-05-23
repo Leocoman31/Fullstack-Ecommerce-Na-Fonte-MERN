@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"name": "myPortofolio",
+			"path": "../../../../myPortofolio"
+		},
+		{
+			"name": "hambuguer-app",
+			"path": "../../../../hambuguer-app"
+		},
+		{
+			"name": "firstapp001",
+			"path": "../../../../firstapp001"
+		},
+		{
+			"name": "SuperPrimeFitness",
+			"path": "../../../SuperPrimeFitness"
+		},
+		{
+			"name": "SuperPrimeFitnessMobile",
+			"path": "../../../SuperPrimeFitnessMobile"
+		},
+		{
+			"name": "NaFonte",
+			"path": "../.."
+		},
+		{
+			"name": "oais-website",
+			"path": "../../../../oais-website"
+		},
+		{
+			"name": "edu-student",
+			"path": "../../../../edu-student"
+		},
+		{
+			"name": "bus-ticket",
+			"path": "../../../../bus-ticket"
+		},
+		{
+			"path": "../../../ToJob"
+		},
+		{
+			"path": "../../../../natours"
+		}
+	],
+	"settings": {}
+}
