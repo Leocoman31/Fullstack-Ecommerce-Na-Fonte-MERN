@@ -2,24 +2,38 @@ import React, { useState } from 'react'
 import { IoSettingsOutline } from "react-icons/io5";
 import { useGetUser } from '../../hooks/useGetUser';
 import { useDeleteUser } from '../../hooks/useDeleteUser';
+import ModelUserDetail from '../UI/ModelUserDetail';
+import { useContextModal } from '../../context/contextModel';
+import { useNavigate } from 'react-router-dom';
+import ModelConfirmDeleteUser from '../UI/ModelConfirmDeleteUser';
 
 function User({user}) {
 
     const[showSetting, setShowSetting ] = useState(false);
     const {isLoading, data} = useDeleteUser({id:user._id})
+    const {handleModelUserDetails,
+        openModelUserDetail} = useContextModal()
+    const navigate = useNavigate();
+    const{deleteShow,handleDeleteConfirm}=useContextModal();
     
 
 
 
     function handleUserDetails (){
-        console.log("coman")
+        setShowSetting(false);
+        handleModelUserDetails();
+        navigate(`userDetail/${user._id}`)
     }
 
     function handleUpdateRoleUser(){
 
     }
 
-    function handleDeleteUser(){
+    function handDeleteUser(){
+        handleDeleteConfirm();
+        setShowSetting(false)
+
+
 
     }
 
@@ -27,7 +41,18 @@ function User({user}) {
    
   return (
     <div>
-         <div className='grid grid-cols-11 gap-x-1 text-gray-800 text-sm justify-center items-center hover:bg-gray-100 '>
+          {
+            
+            openModelUserDetail &&  <ModelUserDetail/>
+          
+            
+
+        }
+        {
+            deleteShow && <ModelConfirmDeleteUser id={user._id}/>
+        }
+        
+         <div className='grid grid-cols-9 gap-x-1 text-gray-800 text-sm justify-center  hover:bg-gray-100 '>
                     <p className='col-span-2 '><span className='font-semibold'> ID: </span>{user._id}</p>
                 
                  
@@ -48,7 +73,7 @@ function User({user}) {
                             </li>
         
                             <li className='p-2 py-1 hover:bg-sky-500'>
-                                <button onClick={handleDeleteUser}>Eliminar</button>
+                                <button onClick={handDeleteUser}>Eliminar</button>
                             </li>
                 
                           

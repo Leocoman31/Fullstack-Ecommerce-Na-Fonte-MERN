@@ -59,7 +59,6 @@ const qtdItemexistCart = useSelector(getItemCart(productd));
         return <Spinner/>
     }
 
-    console.log(relateProduct);
 
 
    
@@ -71,6 +70,8 @@ const qtdItemexistCart = useSelector(getItemCart(productd));
     }=data.product
 
     const loc = location.pathname.split("/")[1] + "/"  + slug
+
+    console.log(reviews)
 
 
     if(qtd === 0){

@@ -13,7 +13,7 @@ import { MdOutlineEventAvailable } from "react-icons/md";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
-
+import { TbCircleXFilled } from "react-icons/tb";
 import { PiMoneyDuotone } from "react-icons/pi";
 
 function SideBar() {
@@ -25,7 +25,7 @@ function SideBar() {
     backdrop-contrast-[90%] bg-black/50 z-[1000] transition-all duration-[0.5] ">
         <div className="fixed bg-gray-950 h-screen">
 
-<button  onClick={handleSideBarAdmin}className='absolute top-1 right-2 text-lg px-2 py-1  hover:bg-sky-700 bg-gray-200 hover:text-white'><span className='border-sky-500 '> x </span></button>
+<button  onClick={handleSideBarAdmin}className='absolute top-1 right-2 px-2 py-1  hover:text-sky-700 text-gray-200'> <TbCircleXFilled size={30}/></button>
 
 <ul className='space-y-2 mt-24 text-gray-400' >
              <li className="hover:bg-sky-500 hover:text-black">

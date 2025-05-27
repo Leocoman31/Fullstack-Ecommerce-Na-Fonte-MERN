@@ -223,7 +223,8 @@ exports.getProduct = catchAsync(async(req,res,next)=>
 
 {
 
-    const product = await Product.findById(req.params.id).populate({path:"reviews"})
+    const product = await Product.findById(req.params.id).populate([{path:"reviews"},
+       {path:"shop"}])
 
 
     if(!product){

@@ -12,7 +12,7 @@ function Menu() {
     const[categoryOpen, setCategoryOpen]= useState(false);
     const {showModelShop,handleModelShop} =useContextModal();
 
-    const{isLoading, data:products, error} = useGetAllProducts();
+    const{isLoading, data:products, error} = useGetAllProducts({CurrentPage:0});
     const navigate = useNavigate();
 
 

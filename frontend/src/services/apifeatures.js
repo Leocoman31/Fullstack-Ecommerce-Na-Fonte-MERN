@@ -147,11 +147,20 @@ export const logout = async() =>{
 }
 
 
-export const getAllProducts = async() =>{
+export const getAllProducts = async(currentPage=0) =>{
 
+    const url = '/api/v1/products/getAllProducts';
+   
     try{
-        const {data} = await axios.get('/api/v1/products/getAllProducts')
-        return data
+
+        if(currentPage>0){
+            const {data} = await axios.get(`${url}/?page=${currentPage}`);
+            return data
+        }
+    
+           
+            const {data} = await axios.get(url)
+            return data
     }
 
     catch(err){
@@ -159,6 +168,9 @@ export const getAllProducts = async() =>{
     }
 
 }
+
+
+
 
 
 export const getAllProductsByCategory = async(category) =>{
@@ -683,6 +695,7 @@ export const getAllOrdersAdmin = async()=>{
 
 export const getUser = async(id)=>{
     try{
+        
         const {data} = await axios.get(`/api/v1/users/getUser/${id}`)
 
         return data
@@ -783,10 +796,10 @@ export const getShop = async(shopId)=>{
 }
 
 
-export const getAllUsers = async()=>{
+export const getAllUsers = async(numberItemPerPage,currentPage)=>{
 
     try{
-        const {data} = await axios.get(`/api/v1/users/getAllUsers`);
+        const {data} = await axios.get(`/api/v1/users/getAllUsers/?page=${currentPage}`);
         return data
     }
     catch(err){
@@ -796,7 +809,8 @@ export const getAllUsers = async()=>{
 }
 
 
-export const deleteUser = async(id)=>{
+export const deleteUser = async(idUser)=>{
+    const {id} = idUser;
     try{
         const {data} = await axios.delete(`/api/v1/users/deleteUser/${id}`);
         return data
@@ -818,3 +832,5 @@ export const updateRoleUser = async(id)=>{
 
     
 }
+
+

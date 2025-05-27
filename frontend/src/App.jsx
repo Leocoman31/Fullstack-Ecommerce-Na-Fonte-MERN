@@ -45,6 +45,9 @@ import AddressAdmin from './pages/admin/adress'
 import AllShops from './pages/admin/shops'
 import ModelShopDetail from './components/UI/ModelShopDetail'
 import Users from './pages/admin/users'
+import ModelUserDetail from './components/UI/ModelUserDetail'
+import ProductsAdmin from './pages/admin/productsAdmin'
+import ModalProductDetail from './components/UI/ModalProductDetail'
 
 
 
@@ -85,7 +88,9 @@ function App() {
   <Route path='/admin' element={<AdminLayout/>}>
     <Route path='dashbord' element={<Dashbord/>}/>  
     <Route path='orders' element={<AdminOrder/>}/>  
-    <Route path='products' element={<Products/>}/>  
+    <Route path='products' element={<ProductsAdmin/>}>
+    <Route path='detailProduct/:id' element={<ModalProductDetail/>}/>   
+     </Route>  
     <Route path='events' element={<Events/>}/>  
     <Route path='withdraw' element={<Withdraw/>}/>  
     <Route path='shopInbox' element={<ShopInbox/>}/>  
@@ -100,9 +105,12 @@ function App() {
     </Route>
     <Route path='shops' element={<AllShops/>}>
     <Route path='shopDetail/:id' element={<ModelShopDetail/>}/>
+   
     </Route>
 
-    <Route path='users' element={<Users/>}/>
+    <Route path='users' element={<Users/>}>
+    <Route path='userDetail/:id' element={<ModelUserDetail/>}/>
+    </Route>
   </Route>
 
   <Route path='/user' element={<UserLayout/>}>

@@ -22,12 +22,23 @@ import { createContext,useState } from 'react'
        const[openModelCart, setOpenModelCart] = useState(false);
        const[openModelOrderDetail, setOpenMOdelOrderDetail] = useState(false);
        const[openModelShopDetail, setOpenModelShopDetail] = useState(false);
+       const[openModelUserDetail, setOpenModelUserDetail] = useState(false);
+       const[openModelProductDetail, setOpenModelProductDetail] = useState(false);
        
 
       function handleQuickViewProd (){
         setOpenQuickViewPro (()=>!openQuickViewProd)
 
       }
+
+      function handleModelUserDetails(){
+        setOpenModelUserDetail(() => !openModelUserDetail)
+      }
+
+      function handleModelProductDetails(){
+        setOpenModelProductDetail(() => !openModelProductDetail)
+      }
+
 
      function handleModelShopDetails(){
       setOpenModelShopDetail(()=>!openModelShopDetail)
@@ -136,7 +147,12 @@ import { createContext,useState } from 'react'
       handleModelOrderDetails,
       openModelOrderDetail,
       handleModelShopDetails,
-      openModelShopDetail
+      openModelShopDetail,
+      handleModelUserDetails,
+      openModelUserDetail,
+      openModelProductDetail,
+      handleModelProductDetails
+
 
 
 

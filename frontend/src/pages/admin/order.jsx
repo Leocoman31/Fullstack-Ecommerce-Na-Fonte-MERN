@@ -52,7 +52,7 @@ function AdminOrder() {
           </div>}
         </div>}
 
-<select onChange={(e)=>setFilterShop(e.target.value)} className=' px-6 rounded-md py-2 text-gray-500 bg-white text-sm'>
+<select onChange={(e)=>setFilterShop(e.target.value)} className=' px-6 rounded-md py-2 border border-sky-500 text-gray-500 bg-white text-sm'>
   <option>Todas as lojas</option>
      {listShops.shops.map(shop => <option  key={shop._id} value={shop.name}>{shop.name}</option>)}
       </select>
@@ -60,7 +60,7 @@ function AdminOrder() {
 
       
 
-      <select  onChange={(e)=>setFilterStatusOrder(e.target.value)} className='  text-gray-500 px-6 rounded-md py-2 bg-white text-sm'>
+      <select  onChange={(e)=>setFilterStatusOrder(e.target.value)} className='  text-gray-500 border border-sky-500 px-6 rounded-md py-2 bg-white text-sm'>
       <option >Todas encomendas</option>
       <option>A Processar</option>
         <option>Confirmada</option>
@@ -69,8 +69,8 @@ function AdminOrder() {
       </select>
 
 
-<div className={`relative px-4 py-2 rounded-lg  ${filterStartDate || filterStartEnd ? "bg-sky-500 text-white" :"bg-white text-gray-500" }`} onMouseEnter={() =>setShowFilterDate(!showFilterDate)} onMouseLeave={() =>setShowFilterDate(!showFilterDate)}>
-         <div className='text-sm flex   gap-2 justify-center items-center'>
+<div className={`relative px-4 py-2 rounded-lg border  border-sky-500  ${filterStartDate || filterStartEnd ? "bg-sky-500  text-white" :"bg-white text-gray-500" }`} onMouseEnter={() =>setShowFilterDate(!showFilterDate)} onMouseLeave={() =>setShowFilterDate(!showFilterDate)}>
+         <div className='text-sm flex   gap-2 justify-center items-center '>
           <p>{filterStartDate!==null && filterStartEnd === null && <span> {filterStartDate} </span> }
           {filterStartDate!==null && filterStartEnd !==null && <span> {filterStartDate} - {filterStartEnd}  </span> }
           {filterStartDate === null && filterStartEnd === null && <span> Filtrar por Data  </span> }
