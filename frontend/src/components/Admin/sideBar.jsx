@@ -15,10 +15,30 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { TbCircleXFilled } from "react-icons/tb";
 import { PiMoneyDuotone } from "react-icons/pi";
+import { logout } from '../../services/apifeatures';
+import { useQueryClient } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
+
 
 function SideBar() {
     const {openSideBarAdmin,
         handleSideBarAdmin} = useContextModal();
+
+    const queryClient = useQueryClient();
+
+
+   async  function handleLogout (){
+
+    const data = await logout();
+    if(data.status === 'success'){
+      toast.success("Logout com sucesso");
+      queryClient.invalidateQueries({queryKey:["users"]})
+
+
+    }
+    window.location.href('/');
+    }
+
   return (
    
         <div className="fixed  w-[100%] h-[100vh]
@@ -29,7 +49,7 @@ function SideBar() {
 
 <ul className='space-y-2 mt-24 text-gray-400' >
              <li className="hover:bg-sky-500 hover:text-black">
-                 <Link to="/dashbord">
+                 <Link to="dashbord">
                  <div className='  flex gap-x-1 items-center px-4 py-2'>
                 <RxDashboard  size={25}/>
                      <p className='hidden md:block'>Dashboard</p>
@@ -116,7 +136,7 @@ function SideBar() {
              </li>
 
              <li className="hover:bg-sky-500 hover:text-black">
-                 <button >
+                 <button  onClick={handleLogout}>
                  <div className='  flex gap-x-1 items-center px-4 py-2'>
                    <RiLogoutCircleLine size={25}/>
                      <p className='hidden md:block'>Sair</p>

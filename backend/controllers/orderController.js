@@ -100,11 +100,15 @@ exports.getAllOrders = catchAsync(async(req,res,next)=>{
 
 exports.getShopOrders = catchAsync(async(req,res,next)=>{
 
-    const features = new APIFeatures(Order.find({shop:user._id}), req.query)
+    console.log()
+
+    const features = new APIFeatures(Order.find({"orderItems.shop":req.params.idShop}), req.query)
     .filter()
     .sort()
     .limitFields()
     .paginate();
+
+    
 
     
 

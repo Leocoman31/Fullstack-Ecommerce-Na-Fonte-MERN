@@ -1,7 +1,6 @@
 const express = require('express');
 const productController= require('../controllers/productController')
 const authController = require('../controllers/authController');
-const shopController = require('../controllers/shopController')
 const reviewRouter = require('../routers/reviewRouter')
 
 
@@ -17,7 +16,7 @@ router.get('/productsWithSameName/:id', productController.getProductsWthSameName
 
 router.post('/addProduct', authController.protect,authController.restrictTo("Seller"),productController.AddProduct);
 router.get('/getAllProductsSeller', authController.protect,authController.restrictTo("Seller"), productController.getAllProductsSeller);
-router.get('/getAllProductsshop', authController.protect,authController.restrictTo("Seller"), productController.getAllproductsShop);
+router.get('/getAllProductsshop/:shop', authController.protect,authController.restrictTo("Seller"), productController.getAllproductsShop);
 router.patch('/updateProduct/:id',authController.protect,authController.restrictTo("Seller"),productController.updateProduct);
 router.delete('/deleteProduct/:id',authController.protect,authController.restrictTo("Seller"),productController.deleteProduct);
 

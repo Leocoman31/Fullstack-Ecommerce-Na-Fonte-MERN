@@ -1,12 +1,15 @@
 import React from 'react'
 import CardProduct from './products/cardProduct'
+import Product from './Product'
 
 function ListProductsShop({listProducts}) {
+ 
+
 
   return (
-    <div className='grid grid-cols-4 gap-2'>
+    <div>
         {
-            listProducts.products.map((product) => <CardProduct key={product._id} product={product}/>)
+            listProducts.products.map((product) => <Product key={product._id} product={product}/>)
         }
 
     </div>

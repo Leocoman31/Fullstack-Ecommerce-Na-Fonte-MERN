@@ -98,23 +98,20 @@ exports.aliasSpecialProduct = (req,res,next) => {
 
 
 exports.getAllProductsSeller = catchAsync(async(req,res,next)=>{
+ console.log("coamn")
+ console.log("ddf")
 
- 
-  const user = req.user._id;
+  const products = await Product.find({user:req.user._id});
 
-  
-  const products = await Product.find();
- 
 
   if(!products){
     return next(new ErrorHandler("Não existe nenhum producto adicionado", 404))
   }
 
 
-  console.log("coman")
   res.status(200).json({
     status:"success",
-    results:products.length,
+    results:1,
     products
   })
 
@@ -124,7 +121,8 @@ exports.getAllProductsSeller = catchAsync(async(req,res,next)=>{
 // get all products shop
 exports.getAllproductsShop = catchAsync(async (req,res,next)=>{
   
-  const shop =req.shop._id;
+  const shop =req.params.shop;
+ 
 
  
 

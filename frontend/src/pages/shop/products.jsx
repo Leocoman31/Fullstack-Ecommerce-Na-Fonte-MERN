@@ -11,15 +11,16 @@ import { useGetMyShops } from '../../hooks/useGetMyShops'
 import { IoSearchOutline } from "react-icons/io5";
 
 function Products() {
- //const {isLoading,data,error} =useGetAllProductsShop()
+  const[shop,setShop]= useState("");
+ const {isLoading:isGettingAllProducts,data:listproducts} =useGetAllProductsShop({shop})
   const{isLoading:isGetingMyShops,data:shops}=useGetMyShops();
 
   const {isLoading,data,error} = useGetAllProductsSeller();
   const{openModalProduct,handleModalNewProduct,} =useContextModal();
-  const[shop,setShop]= useState("");
+  
 
 
-  if(isLoading ||isGetingMyShops){
+  if(isLoading ||isGetingMyShops || isGettingAllProducts){
     return <Spinner/>
   }
 
@@ -33,35 +34,35 @@ function Products() {
   return (
 
     
-    <div>
+    <div className='m-16'>
   
-
+  {openModalProduct && <ModalProduct/>} 
       <div className='flex gap-4  justify-center items-center text-gray-500  mb-8 '>
-      <div>
+      <div className='bg-white border border-sky-500 rounded-lg px-2 py-1'>
  <button onClick={()=>handleModalNewProduct()}><AiOutlinePlusCircle className='inline mr-2' size={20}/>Novo Producto</button>
-   {openModalProduct && <ModalProduct/>} 
+
   </div>
 
   <div>
 
-  <div className='flex justify-center items-center text-gray-500'>
-  <select name="shop"  className="   p-2 w-full" id="shop-select" onChange={(e)=>setShop(e.target.value)}>
+  <div className=' bg-white border border-sky-500 px-2 py-1 rounded-lg text-gray-500'>
+  <select name="shop"  className="  w-full" id="shop-select" onChange={(e)=>setShop(e.target.value)}>
              <option defaultValue="">Filtrar por loja</option> 
              {shops.shop.map((shopItem => 
              <option key={shopItem._id} value={shopItem._id}>{shopItem.name} </option> ))}
              
              
              </select>
-             <button className=" text-gray-300  px-4  " ><IoSearchOutline color='gray' size={24}/></button>
+          
 
   </div>
 
   </div>
 
-  <div>
-     <div className='flex w-full '>
+
+     <div className='flex  border border-sky-500 rounded-lg bg-white   '>
                   
-                <input type="text" className=" block px-4 w-full py-2 " placeholder=" buscar producto ... "/>
+                <input type="text" className=" block w-[70%] px-4 py-1 " placeholder=" buscar producto ... "/>
                 
                
                 <button className=" text-gray-300  px-4  " ><IoSearchOutline color='gray' size={24}/></button>
@@ -69,13 +70,16 @@ function Products() {
            
                
                 </div>
-  </div>
+  
         
       </div>
 
 <div>
   
 {//<ListProductsShop listProducts={data}/>
+}
+{
+  shop.length > 0 && <ListProductsShop listProducts={listproducts}/>
 }
 
 </div>

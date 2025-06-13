@@ -48,6 +48,11 @@ import Users from './pages/admin/users'
 import ModelUserDetail from './components/UI/ModelUserDetail'
 import ProductsAdmin from './pages/admin/productsAdmin'
 import ModalProductDetail from './components/UI/ModalProductDetail'
+import EventsAdmin from './pages/admin/eventsAdmin'
+import ModalEventDetail from './components/UI/ModalEventDetail'
+import WitdrawsAdmin from './pages/admin/witdrawsAdmin'
+import AdminDashbord from './pages/admin/dashbord'
+import ModelEditProduct from './components/UI/ModelEditProduct'
 
 
 
@@ -69,10 +74,14 @@ function App() {
 
   </Route>
 
-  <Route path='/shop' element={<ShopLayoult/>}>
+  <Route path='/seller' element={<ShopLayoult/>}>
     <Route path='dashbord' element={<Dashbord/>}/>  
     <Route path='orders' element={<Order/>}/>  
-    <Route path='products' element={<Products/>}/>  
+    <Route path='products' element={<Products/>}>
+    <Route path='detailProduct/:id' element={<ModalProductDetail/>}/>  
+    <Route path='editProduct/:id' element={<ModelEditProduct/>}/>  
+    
+    </Route>  
   
     <Route path='events' element={<Events/>}/>  
     <Route path='createEvent' element={<CreateEvent/>}/>  
@@ -86,13 +95,17 @@ function App() {
 
 
   <Route path='/admin' element={<AdminLayout/>}>
-    <Route path='dashbord' element={<Dashbord/>}/>  
+    <Route path='dashbord' element={<AdminDashbord/>}/>  
     <Route path='orders' element={<AdminOrder/>}/>  
     <Route path='products' element={<ProductsAdmin/>}>
     <Route path='detailProduct/:id' element={<ModalProductDetail/>}/>   
      </Route>  
-    <Route path='events' element={<Events/>}/>  
-    <Route path='withdraw' element={<Withdraw/>}/>  
+    <Route path='events' element={<EventsAdmin/>}>  
+    <Route path='eventDetail/:id' element={<ModalEventDetail/>}/>
+    </Route>
+
+
+    <Route path='withdraw' element={<WitdrawsAdmin/>}/>  
     <Route path='shopInbox' element={<ShopInbox/>}/>  
     <Route path='promocode' element={<PromoCodes/>}/>  
     <Route path='refounds' element={<Refounds/>}/>  

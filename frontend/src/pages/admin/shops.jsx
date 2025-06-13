@@ -6,6 +6,7 @@ import ShopsList from '../../components/Admin/ShopsList'
 import { IoSearchOutline } from "react-icons/io5";
 import ModelShopDetail from '../../components/UI/ModelShopDetail'
 
+
 function AllShops() {
     const{isLoading, data} =useGetAllShops();
     const[filterShopStatus, setFilterShpoStatus]= useState("");

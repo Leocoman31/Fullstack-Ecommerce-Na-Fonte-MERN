@@ -84,6 +84,23 @@ exports.getAllEvents = catchAsync(async(req,res,next)=>{
 })
 
 
+
+exports.getEventAdmin = catchAsync(async(req,res,next)=>{
+
+
+
+    const event = await Event.findById(req.params.id).populate({path:"shop"});
+    if(!event){
+        return next (new ErrorHandler("Não existe nenhuma evento com este ID",404))
+    }
+
+    res.status(200).json({
+        status:"success",
+        event
+
+    })
+})
+
 exports.getEvent = catchAsync(async(req,res,next)=>{
 
 

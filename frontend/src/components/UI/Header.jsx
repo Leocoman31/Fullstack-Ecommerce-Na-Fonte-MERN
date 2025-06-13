@@ -107,7 +107,7 @@ function Header() {
             <input type="text"  onChange={(e) => setKeywords(e.target.value)} className=" rounded-lg bg-gray-200 block w-full px-4 py-3 " placeholder="Olá, o que você procura?"/>
             
            
-            <button  onClick={handleSearch} className=" text-black absolute  end-2.5 bottom-2.5" ><IoSearchOutline size={26}/></button>
+            <button  onClick={handleSearch} className=" text-black absolute end-2.5 bottom-2.5" ><IoSearchOutline size={26}/></button>
 
        
            
@@ -267,7 +267,7 @@ function Header() {
           </div>
            <ul className='space-y-2 my-4'>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/dashbord">
+                           <Link to="seller/dashbord">
                            <div className='  text-gray-600  px-4'>
                           
                                <p className='hidden md:block'>Dashboard</p>
@@ -275,7 +275,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/shops">
+                           <Link to="seller/shops">
                            <div className='  text-gray-600  px-4'>
                               
                                <p className='hidden md:block'>Lojas</p>
@@ -283,7 +283,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/orders">
+                           <Link to="seller/orders">
                            <div className='  text-gray-600  px-4'>
                               
                                <p className='hidden md:block'>Encomendas</p>
@@ -291,7 +291,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/products">
+                           <Link to="seller/products">
                            <div className='  text-gray-600 px-4'>
                          
                                <p className='hidden md:block'>Productos</p>
@@ -300,7 +300,7 @@ function Header() {
                        </li>
 
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/products">
+                           <Link to="seller/products">
                            <div className='  text-gray-600 px-4'>
                          
                                <p className='hidden md:block'>Usuários</p>
@@ -309,7 +309,7 @@ function Header() {
                        </li>
                       
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/events">
+                           <Link to="seller/events">
                            <div className='  text-gray-600  px-4'>
                            
                                <p className='hidden md:block'>Eventos</p>
@@ -318,7 +318,7 @@ function Header() {
                        </li>
                       
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/withdraw">
+                           <Link to="seller/withdraw">
                            <div className='  text-gray-600 px-4 '>
                           
                                <p className='hidden md:block'>Saque</p>
@@ -326,7 +326,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/shopInbox">
+                           <Link to="seller/shopInbox">
                            <div className='  text-gray-600 px-4 '>
                        
                                <p className='hidden md:block'>Mensagens</p>
@@ -334,7 +334,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/promocode">
+                           <Link to="seller/promocode">
                            <div className='  text-gray-600  px-4 '>
                       
                                <p className='hidden md:block'>Promo Codes</p>
@@ -342,7 +342,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/refounds">
+                           <Link to="seller/refounds">
                            <div className='  text-gray-600 px-4 '>
                              
                                <p className='hidden md:block'>Reembolsos</p>
@@ -350,7 +350,7 @@ function Header() {
                            
                        </li>
                        <li className="hover:bg-sky-500">
-                           <Link to="shop/settings">
+                           <Link to="seller/settings">
                            <div className='  text-gray-600  px-4'>
                              
                                <p className='hidden md:block'>Configurações</p>
@@ -457,14 +457,7 @@ function Header() {
                  </div></Link>
                  
              </li>
-             <li className="hover:bg-sky-500">
-                 <Link to="admin/promocode">
-                 <div className='  text-gray-600  px-4 '>
-            
-                     <p className='hidden md:block'>Promo Codes</p>
-                 </div></Link>
-                 
-             </li>
+          
              <li className="hover:bg-sky-500">
                  <Link to="admin/refounds">
                  <div className='  text-gray-600 px-4 '>

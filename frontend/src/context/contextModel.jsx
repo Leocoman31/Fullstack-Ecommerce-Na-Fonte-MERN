@@ -9,6 +9,7 @@ import { createContext,useState } from 'react'
       const [openQuickViewProd, setOpenQuickViewPro] = useState(false);
       const [openAuth, setopenAuth] = useState(false);
       const [openSideBar, setOpenSideBar] = useState(false);
+      const [openSideBarSeller, setOpenSideBarSeller] = useState(false);
       const [openSideBarAdmin, setOpenSideBarAdmin] = useState(false);
       const [openModalProduct, setOpenModalProdut] = useState(false);
       const[showModelShop,setShowModelShop] = useState(false);
@@ -24,12 +25,20 @@ import { createContext,useState } from 'react'
        const[openModelShopDetail, setOpenModelShopDetail] = useState(false);
        const[openModelUserDetail, setOpenModelUserDetail] = useState(false);
        const[openModelProductDetail, setOpenModelProductDetail] = useState(false);
+       const[openModelEventDetail, setOpenModelEventDetail] = useState(false);
+       
        
 
       function handleQuickViewProd (){
         setOpenQuickViewPro (()=>!openQuickViewProd)
-
       }
+
+
+        function handleModelEventDetails(){
+          setOpenModelEventDetail(() => !openModelEventDetail)
+        }
+  
+      
 
       function handleModelUserDetails(){
         setOpenModelUserDetail(() => !openModelUserDetail)
@@ -37,6 +46,10 @@ import { createContext,useState } from 'react'
 
       function handleModelProductDetails(){
         setOpenModelProductDetail(() => !openModelProductDetail)
+      }
+
+      function handleSideBarSeller(){
+        setOpenSideBarSeller(() => !openSideBarSeller)
       }
 
 
@@ -151,7 +164,12 @@ import { createContext,useState } from 'react'
       handleModelUserDetails,
       openModelUserDetail,
       openModelProductDetail,
-      handleModelProductDetails
+      handleModelProductDetails,
+      openModelEventDetail,
+      handleModelEventDetails,
+      handleSideBarSeller,
+      openSideBarSeller
+
 
 
 

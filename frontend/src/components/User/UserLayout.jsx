@@ -8,7 +8,7 @@ function UserLayout() {
   return (
     <div>
     <HeaderUser/>
-    {//<MenuUser/>
+    {
 }
     <main>
       <Outlet/>

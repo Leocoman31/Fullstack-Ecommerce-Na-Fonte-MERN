@@ -35,6 +35,13 @@ if(isLoading){
     return <Spinner/>
 }
 
+const date = new Date(orders.orderCreateAt);
+
+
+
+
+
+
 
   return (
     <>
@@ -48,7 +55,7 @@ if(isLoading){
     <p> <span className='font-semibold'>Total pago: </span> {orders.totalAmount} kwanzas</p>
     <p className='col-span-2'>Comprador: {data.user.name}</p>
     <p> <span className='font-semibold'>Estado: </span>{orders.orderStatus}</p>
-    <p>  <span className='font-semibold'>Feita: </span> {orders.orderCreateAt}</p>
+    <p>  <span className='font-semibold'>Feita: </span> {date.getDay()}/{date.getMonth()}/{date.getFullYear()}</p>
     <div className='relative'>
     <button onClick={()=> setShowSetting(!showSetting)}><IoSettingsOutline className='hover:text-sky-500' size={26}/></button>
 

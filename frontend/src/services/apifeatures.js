@@ -421,12 +421,13 @@ export const addReviewToProduct =  async(review,rating, product,user,imagesRevie
 }
 
 
-export const getAllProductsShop = async()=>{
+export const getAllProductsShop = async(shop)=>{
     try{
       
 
     
-        const {data} = await axios.get('/api/v1/products/getAllProductsshop')
+        const {data} = await axios.get(`/api/v1/products/getAllProductsshop/${shop}`)
+        console.log(data)
     
         return data
     }
@@ -446,7 +447,7 @@ export const getAllProductsSeller = async()=>{
 
     
         const {data} = await axios.get('/api/v1/products/getAllProductsSeller')
-    
+        console.log(data)
         return data
     }
     catch(err){
@@ -830,7 +831,71 @@ export const updateRoleUser = async(id)=>{
         console.log(err)
     }
 
-    
+    s
 }
 
+export const getEventAdmin = async(id)=>{
+    try{
+        const {data} = await axios.get(`/api/v1/events/detailEventAdmin/${id}`);
+        return data
+    }
+    catch(err){
+        console.log(err)
+    }
+
+}
+
+export const getAllWitdraw = async()=>{
+    try{
+        const {data} = await axios.get(`/api/v1/withdraws/getAllWithdraw`);
+        return data
+    }
+    catch(err){
+        console.log(err)
+    }
+
+}
+
+export const getAllOrdersSeller = async(id)=>{
+    try{
+
+        const {data} = await axios.get(`/api/v1/orders/getShopOrders/${id}`);
+        return data
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+
+
+export const deleteProduct = async (idProduct)=>{
+
+    const {id} = idProduct
+   
+    try{
+
+        const {data} = await axios.delete(`/api/v1/products/deleteProduct/${id}`);
+        return data
+    }
+    catch(err){
+        console.log(err)
+    }
+
+}
+
+
+export const editProduct = async(idProduct,data)=>{
+    const {id} = idProduct
+   
+    try{
+
+        const {data} = await axios.patch(`/api/v1/products/updateProduct/${id}`,{data},{withCredentials:true});
+        return data
+    }
+    catch(err){
+        console.log(err)
+    }
+
+}
 

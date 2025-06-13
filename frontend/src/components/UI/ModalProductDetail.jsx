@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContextModal } from '../../context/contextModel';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useGetproduct } from '../../hooks/useGetproduct';
 import ProductDetail from './ProductDetail';
 import Spinner from './Spinner';
@@ -12,6 +12,7 @@ function ModalProductDetail() {
     const {penModelProductDetail,
         handleModelProductDetails}= useContextModal();
     const {isLoading, data} = useGetproduct({id})
+    const navigate = useNavigate()
    
    
     function handleCloseModel(){

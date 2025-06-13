@@ -33,7 +33,7 @@ function ProductDetail({product}) {
     {product.discountPrice>0  && <p > <span className='font-semibold'>Preço Promorcional: </span> {product.discountPrice} </p>}
     <p > <span className='font-semibold'>Stock: </span> {product.stock} </p>
     <p > <span className='font-semibold'>Raking de avaliação:</span> {product.ratings} </p>
-    <p > <span className='font-semibold'>Descrição: </span> {product.description} </p>
+    <p  className=' text-justify '> <span className='font-semibold'>Descrição: </span> {product.description} </p>
     <p > <span className='font-semibold'>Vendedor: </span> {product.shop.name} </p>
 
 

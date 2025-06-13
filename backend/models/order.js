@@ -63,6 +63,12 @@ const orderSchema = new mongoose.Schema({
                 ref:"Shop"
             },
 
+            seller:{
+              type:mongoose.Schema.Types.ObjectId,
+              required:true,
+              ref:"User"
+            },
+
             color:{
               type:String
             },
@@ -98,6 +104,8 @@ const orderSchema = new mongoose.Schema({
         required: true,
         ref: 'User'
     },
+
+  
 
  
         

@@ -11,6 +11,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMenuOutline } from "react-icons/io5";
 import { AiOutlineShopping } from "react-icons/ai";
 import { useContextModal } from '../../context/contextModel';
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 
 
@@ -51,8 +52,13 @@ function HeaderAdmin() {
                     </div>
 
                     <div className='text-center flex flex-col justify-center items-center'>
+                  <Link to="shops" >
                   <AiOutlineShopping className=" text-3xl text-gray-500"/>
-                  <Link to="shops" className="text-[10px] text-gray-800 ">Lojas</Link>
+                 
+                  
+                  </Link>
+                  <p className="text-[10px] text-gray-800 ">Lojas</p>
+                
 
 
                   </div>
@@ -60,25 +66,42 @@ function HeaderAdmin() {
                   
 
                   <div class="flex flex-col justify-center items-center">
-                  <BsBoxSeam className=" text-3xl text-gray-500"/>
-                  <Link to="orders" className="text-[10px] text-gray-800">Encomendas</Link>
+                 
+                  <Link to="orders"> <BsBoxSeam className=" text-3xl text-gray-500"/></Link>
+                  <p className="text-[10px] text-gray-800">Encomendas</p>
 
 
                   </div>
 
                   <div className='flex flex-col justify-center items-center'>
-                  <IoChatbubbleEllipsesOutline className=" text-3xl text-gray-500"/>
-                  <Link to="shopInbox" className="text-[10px] text-gray-800">Suporte</Link>
+                 
+                  <Link to="shopInbox" > <IoChatbubbleEllipsesOutline className=" text-3xl text-gray-500"/></Link>
+                  <p className="text-[10px] text-gray-800">Suporte</p>
 
 
                   </div>
 
                   <div class="flex flex-col justify-center items-center">
-                  <IoMenuOutline className=" text-3xl text-gray-500"/>
-                  <button to="messagens" onClick={handleSideBarAdmin} className="text-[10px] text-gray-800">Menu</button>
+                  
+                  <button to="messagens" onClick={handleSideBarAdmin} ><IoMenuOutline className=" text-3xl text-gray-500"/></button>
+                  <p className="text-[10px] text-gray-800">Menu</p>
+
+
 
 
                   </div>
+
+                  <div className='flex flex-col justify-center items-center'>
+                 
+              
+
+                 <button to="messagens" onClick={handleSideBarAdmin} ><RiLogoutCircleLine className=" text-3xl text-gray-500"/></button>
+                  <p className="text-[10px] text-gray-800">Sair</p>
+
+
+                 </div>
+
+                  
 
                   
                   
